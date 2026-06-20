@@ -69,7 +69,6 @@
             transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Disable custom cursor on touch devices */
         @media (pointer: coarse) {
             #custom-cursor {
                 display: none !important;
@@ -85,7 +84,6 @@
             height: 70px;
         }
 
-        /* Minimalist Scrollbar */
         ::-webkit-scrollbar {
             width: 5px;
         }
@@ -107,10 +105,6 @@
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
             color: transparent;
         }
-
-        .content-fade {
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        }
     </style>
 </head>
 
@@ -127,7 +121,6 @@
             <div>SYS. INIT: ALADDIN CORE</div>
         </div>
         <div class="overflow-hidden py-4 mt-auto sm:mt-0">
-            <!-- Fluid Typography using clamp/vw for mobile screens -->
             <h1
                 class="font-display text-[15vw] sm:text-[12vw] md:text-9xl font-extrabold uppercase tracking-tighter leading-none animate-reveal">
                 $14.04<br class="block md:hidden"> TRILLION
@@ -163,28 +156,29 @@
         </button>
     </header>
 
-    <!-- Hero Section -->
-    <section id="overview"
-        class="relative min-h-screen flex flex-col justify-between p-6 md:p-10 pt-28 md:pt-40 z-10 border-b border-neutral-900">
+    <!-- Hero Section: Fixed Vertical Centering & Perfect Math Scaling -->
+    <section id="overview" class="relative min-h-screen flex flex-col p-6 md:p-10 z-10 border-b border-neutral-900">
         <div
             class="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:24px_24px]">
         </div>
 
-        <div class="z-10 flex flex-col h-full justify-center mt-12 md:mt-12">
-            <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <!-- Push content exactly to the middle using flex-grow -->
+        <div class="z-10 flex-grow flex flex-col justify-center w-full max-w-[100vw] overflow-hidden pt-20">
+            <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-8">
                 <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse flex-shrink-0"></span>
                 <span class="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-neutral-400">NYSE: BLK
                     • The Apex Fiduciary</span>
             </div>
-            <!-- Scalable Hero Typography -->
+
+            <!-- PERFECT 9vw SCALING: Fits exactly inside 100% width across all devices -->
             <h1
-                class="font-display text-[16vw] sm:text-[12vw] lg:text-[10vw] font-extrabold uppercase tracking-tighter leading-[0.85] text-white mb-6">
+                class="font-display text-[9vw] font-extrabold uppercase tracking-tighter leading-[0.85] text-white mb-6 whitespace-nowrap">
                 Structural <br>
                 <span class="text-outline">Gravity.</span>
             </h1>
 
             <div
-                class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 font-mono text-xs text-neutral-500 max-w-4xl mt-8 pt-8 border-t border-neutral-900">
+                class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 font-mono text-xs text-neutral-500 max-w-4xl mt-4 sm:mt-8 pt-6 sm:pt-8 border-t border-neutral-900">
                 <div>
                     <span class="block text-white text-base sm:text-lg font-bold mb-1">14.04T</span>
                     <span class="uppercase tracking-widest text-[8px] sm:text-[9px]">Assets Under Management</span>
@@ -205,7 +199,7 @@
         </div>
 
         <div
-            class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6 sm:gap-10 text-neutral-400 z-10 border-t border-neutral-900 pt-8 mt-12 sm:mt-16 bg-[#020202]/80 backdrop-blur-sm">
+            class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6 sm:gap-10 text-neutral-400 z-10 border-t border-neutral-900 pt-6 sm:pt-8 mt-12 bg-[#020202]/80 backdrop-blur-sm">
             <p class="max-w-2xl text-xs sm:text-sm leading-relaxed font-light font-sans">
                 <strong>BlackRock is the world's largest asset manager.</strong> Operating far beyond a traditional
                 bank, it functions as a fiduciary entity—managing money on behalf of clients, not investing its own
@@ -399,6 +393,7 @@
                         <span
                             class="font-mono text-[9px] sm:text-[11px] text-neutral-500 tracking-widest uppercase border border-neutral-700 px-2 sm:px-3 py-1 rounded-full">01
                             / Passive Indexing</span>
+                        <span class="font-mono text-[9px] sm:text-[11px] text-emerald-500">Retail Core</span>
                     </div>
                     <h4 class="font-display text-3xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">The
                         iShares® Jackpot</h4>
